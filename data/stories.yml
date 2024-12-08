@@ -1,0 +1,39 @@
+version: "3.1"
+
+stories:
+  - story: greet and ask about services
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_services
+      - action: utter_ask_services
+
+  - story: goodbye conversation
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: user asks for help
+    steps:
+      - intent: help
+      - action: utter_help
+
+  - story: user feels great
+    steps:
+      - intent: mood_great
+      - action: utter_mood_great
+
+  - story: user feels unhappy
+    steps:
+      - intent: mood_unhappy
+      - action: utter_mood_unhappy
+
+  - story: bot challenge
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+      
+ - story: Crawl a URL
+    steps:
+      - intent: provide_url
+      - action: action_crawl_url

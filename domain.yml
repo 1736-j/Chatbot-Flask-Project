@@ -1,0 +1,58 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - help
+  - mood_great
+  - mood_unhappy
+  - affirm
+  - deny
+  - bot_challenge
+  - ask_services
+
+slots:
+  service:
+    type: text
+    mappings:
+      - type: from_text
+        intent: ask_services
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I help you today?"
+  utter_goodbye:
+    - text: "Goodbye! Have a great day!"
+  utter_help:
+    - text: "I am here to help you with anything you need."
+  utter_mood_great:
+    - text: "Glad to hear you're doing great!"
+  utter_mood_unhappy:
+    - text: "I'm sorry to hear you're not feeling well."
+  utter_ask_services:
+    - text: "We offer several services. What would you like to know more about?"
+  utter_iamabot:
+    - text: "I am a bot here to assist you."
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_help
+  - utter_mood_great
+  - utter_mood_unhappy
+  - utter_ask_services
+  - utter_iamabot
+   - action_hello_world
+  - action_ask_service
+   - action_crawl_url
+
+slots:
+  url:
+    type: text
+
+intents:
+  - provide_url
+
+responses:
+  utter_ask_url:
+    - text: "Please provide the URL you want to crawl."

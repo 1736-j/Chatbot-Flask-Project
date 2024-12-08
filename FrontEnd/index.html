@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="header">
+            <h1>Agent Management Dashboard</h1>
+            <button id="create-agent-button" class="btn btn-primary">+ Create New Agent</button>
+            <!-- Modal Container -->
+            <div id="create-agent-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2>Create New Agent</h2>
+                    <form class="modal-form">
+                        <div class="form-group">
+                            <label for="agent-name">Agent Name</label>
+                            <input type="text" id="agent-name" placeholder="Enter agent name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="agent-url">Agent Profile URL</label>
+                            <input type="url" id="agent-url" placeholder="Enter profile URL" required />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Create Agent</button>
+                    </form>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Left Section -->
+            <div class="left-section">
+                <!-- Agents Section -->
+                <div class="agents">
+                    <h2>Agents</h2>
+                    <div class="agent-card" data-status="active" data-id="1">
+                        <img src="./Images/rose.jpg" alt="Assistant 1" class="agent-pic">
+                        <h3>Rose</h3>
+                        <span class="status active">Active</span>
+                        <textarea class="prompt-input" placeholder="Enter a prompt for Rose"></textarea>
+                        <button class="btn btn-secondary save-prompt">Save</button>
+                    </div>
+                    <div class="agent-card" data-status="inactive">
+                        <img src="./Images/jack.jpg" alt="Assistant 2" class="agent-pic">
+                        <h3>Jack</h3>
+                        <span class="status inactive">Inactive</span>
+                        <textarea class="prompt-input" placeholder="Enter a prompt for Jack"></textarea>
+                        <button class="btn btn-secondary save-prompt">Save</button>
+                    </div>
+                
+                </div>
+
+                <!-- Products Section -->
+                <div class="products">
+                    <h2>Products</h2>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <img src="./Images/product1.jpg" alt="Product 1">
+                            <h3>Product 1</h3>
+                        </div>
+                        <div class="product-card">
+                            <img src="./Images/product2.jpg" alt="Product 2">
+                            <h3>Product 2</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="right-section">
+                <!-- Notifications/Analytics -->
+                <div class="notifications">
+                    <h2>Recent Notifications</h2>
+                    <ul>
+                        <li>Agent New Added saved successfully.</li>
+                        <li>Product added to inventory.</li>
+                        <li>New message from chatbot.</li>
+                    </ul>
+                </div>
+
+                <!-- Chatbot -->
+                <div class="chatbot">
+                    <h2>Chatbot</h2>
+                    <div class="chatbox">
+                        <div id="chat-history">
+                            <!-- Chat history -->
+                            <p><b>Bot:</b> How can I assist you?</p>
+                        </div>
+                        <div class="chat-input">
+                            <textarea id="chat-message" placeholder="Type your message..."></textarea>
+                            <button id="send-chat" class="btn btn-primary">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>
